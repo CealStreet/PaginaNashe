@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    {% load static %}
+    <title>Ingreso al sistema</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{%static 'dogs/css/lista.css'%}">
+
+</head>
+
+
+<body>
+   <nav class="navbar navbar-expand-sm navbar-light bg-white">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <img src="{%static 'dogs/img/Logo.jpg'%}" width="100" height="100" alt="" />
+          </a>
+          <div class="collapse navbar-collapse" id="opciones">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link " href="/">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link " href="/quienessomos/">Quienes somos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/galeria/">Galeria</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/contactanos/">Contactanos</a>
+  
+                  </li>
+                
+  
+  
+              </ul>
+          </div>
+      </nav>
+  
+  <br>
+  <br>
+    {% load humanize %}
+ <div class="card">
+    <dic class="card-body">
+        <h2>Lista de productos</h2>
+        <hr>
+      <table class="table table-striped table-hover table-responsive-sm">
+
+
+        <tr>
+            <th>nombre</th>
+            <th>precio</th>
+            
+        </tr>
+
+        {% for p in productos %}
+        <tr>
+            <th>{{ p.nombre | title}}
+            <th>${{ p.precio | intcomma}}
+
+        </tr>
+
+        {% endfor%}
+
+
+
+
+
+
+      </table>
+    </div>
+</div>  
+
+
+
+   
+    
+   
+
+
+
+
+
+   </div>
+   <div class="container">
+       <footer class="bg-light text-center text-black">
+         <div class="container p-4 pb-0">
+           <section class="mb-3">
+               <!--  facebook -->
+               <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                       class="fab fa-facebook-f"><img src="{% static 'dogs/img/facebook.png'%}" width="30px"></i></a>
+               <!-- instagram -->
+               <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                       class="fab fa-instagram"><img src="{%static 'dogs/img/logoinsta.png'%}" width="30px"></i></a>
+               <!-- twitter -->
+               <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                       class="fab fa-twitter"><img src="{% static 'dogs/img/twitter-logo.png'%}" width="30px"></i></a>
+         </div>
+         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+           Cesar Gonzalez<br> © 2022 Copyright:
+       </div>
+       </footer>
+   </div>
+
+</body>
+
+</html>

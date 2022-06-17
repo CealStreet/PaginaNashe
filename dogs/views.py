@@ -36,7 +36,7 @@ def agregar_producto(request):
     if request.method =='POST':
         formulario = ProductoForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
-            formulario.save
+            formulario.save()
             data["mensaje"]="Guardado Correctamente"
         
         

@@ -50,20 +50,20 @@
     </nav>
     <br>
     <br>
-    {% block contenido%}
+    
 
 {% load crispy_forms_tags %}
 
- <form action="" class="formulario_contacto" method="post" >
-        {% csrf_token%}
+ <form action=""  method="post" >
+            {% csrf_token%}
         
-          {{ contacto  }}
+          {{ contacto | crispy }}
 
     <br>
     <button type="submit" id="btnEnviar" class="button">Enviar</button>
  </form>
 
-{% endblock %}
+
 <br>
 
 

@@ -11,16 +11,3 @@ body {
     background: url("/static/dogs/img/fondo.jpg") fixed center center / cover;
     background-repeat: no-repeat;
 }
-
-.card {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: auto;
-    height: auto;
-}
-
-.container {
-    margin: auto;
-    padding: 100px;
-}

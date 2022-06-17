@@ -53,16 +53,30 @@
     
 
 {% load crispy_forms_tags %}
+<div class=" container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="car">
+                <div class="car-body">
+                    <h2> Registra tu usuario</h2>
+                    <hr>
+                    <form action="" method="post">
 
- <form action=""  method="post" >
-            {% csrf_token%}
-        
-          {{ contacto | crispy }}
+                        {% csrf_token %} 
+                        {{contacto| crispy}}
+                        <a href="/">ir al home</a> |
+                        
+                        
 
-    <br>
-    <button type="submit" id="btnEnviar" class="button">Enviar</button>
- </form>
 
+                        <br>
+                        <input type="submit" value="Enviar" class="btn btn-success float-right">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 <br>
 

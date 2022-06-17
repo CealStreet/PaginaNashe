@@ -59,7 +59,8 @@
 
                             {% csrf_token %} 
                             {{form | crispy}}
-                            <a href="/">ir al home</a>
+                            <a href="/">ir al home</a> |
+                            <a href="{% url 'login'%}">Iniciar Sesión</a>
                             
 
 

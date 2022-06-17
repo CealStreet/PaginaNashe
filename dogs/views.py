@@ -17,14 +17,14 @@ def galeria(request):
 
 def contacto(request):
     data = {
-        'conatacto': ContactoForm()
+        'contacto': ContactoForm()
      }
     if request.method == 'POST':
         formulario = ContactoForm(data=request.POST)
         if formulario.is_valid():
             data["mensaje"]= "Contacto Guardado"
         else:
-            data["form"]=formulario
+            data["form"] = formulario
 
     return render(request, 'dogs/contactanos.html', data)
 

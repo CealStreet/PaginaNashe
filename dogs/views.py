@@ -4,6 +4,7 @@ from .forms import ContactoForm, ProductoForm, CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 
 
+
 # Create your views here.
 def index(request):
     return render(request, 'dogs/index.html')
@@ -53,7 +54,14 @@ def listarpreducto(request):
 
 def modificarproducto( request, id):
     
-    return render(request, 'dogs/producto/modificar.html')
+    producto = get_object_or_404(producto, id=id)
+
+    data = {
+        'form': ProductoForm(instance=producto) 
+    }
+
+    
+    return render(request, 'dogs/producto/modificar.html', data)
 
 def registro(request):
     data = {

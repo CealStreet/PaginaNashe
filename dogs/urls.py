@@ -1,6 +1,11 @@
-from django.urls import path
+from django.urls import path, include
 from .views import *
 from . import views
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register('producto', ProductoViewset)
 
 
 urlpatterns=[
@@ -19,6 +24,7 @@ urlpatterns=[
     path('modificar-producto/<id>/', modificarproducto, name="modificar_productos"),
 
     path('registro/', registro,name="registro"),
+    path('api/', include(router.urls)),
 
 
 

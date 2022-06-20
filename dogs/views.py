@@ -2,10 +2,16 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import*
 from .forms import ContactoForm, ProductoForm, CustomUserCreationForm
 from django.contrib.auth import authenticate, login
-
-
+from django.contrib import messages
+from django.contrib.auth.models import User
+from rest_framework import viewsets
+from .serializers import ProductoSerializer
 
 # Create your views here.
+class ProductoViewset(viewsets.ModelViewSet):
+    queryset = producto.objects.all()
+    serializer_class = ProductoSerializer
+
 def index(request):
     return render(request, 'dogs/index.html')
 
@@ -71,10 +77,10 @@ def registro(request):
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-       
-       
-      
-        return redirect(to="Inicio")
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request, "Te has registrado correctamente")
+            return redirect(to="Inicio")
         data["form"] = formulario
     return render(request, 'registration/registro.html',data)
 

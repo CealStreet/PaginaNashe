@@ -19,12 +19,13 @@ urlpatterns=[
 
     path('agregar-producto/', agregar_producto, name="agregar_producto"),
 
-    path('listar-producto/', listarpreducto, name="listar_producto"),
+    #path('listar-producto/', listarpreducto, name="listar_producto"),
 
     path('modificar-producto/<id>/', modificarproducto, name="modificar_productos"),
 
     path('registro/', registro,name="registro"),
     path('api/', include(router.urls)),
+    path('tienda/', tienda,name="Tienda")
 
 
 

@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets
 from .serializers import ProductoSerializer
 
+
 # Create your views here.
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = producto.objects.all()
@@ -84,6 +85,11 @@ def registro(request):
         data["form"] = formulario
     return render(request, 'registration/registro.html',data)
 
-
+def tienda(request):
+    productos = producto.objects.all()
+    data={
+        'productos': productos
+    }
+    return render(request, 'dogs/tienda.html',data)
 
 
